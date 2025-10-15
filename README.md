@@ -16,3 +16,10 @@
 中拖入这一整个文件夹进行查看，并可以拉动左下角的拉杆进行观察。
 
 ![alt text](img/show_urdf.png)
+
+## 最后
+如果需要原始模型，可以通过网盘下载
+
+链接：[**https://pan.quark.cn/s/35a948faf0dc**](https://pan.quark.cn/s/35a948faf0dc)
+
+里面包含原始模型，绑定点、轴、坐标系，使用sw2urdf的设置模型过程的模型，方便大家自己动手。
