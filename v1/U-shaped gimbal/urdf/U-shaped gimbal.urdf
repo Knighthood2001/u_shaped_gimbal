@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="U-shaped gimbal">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-5.1149E-05 0.060823 -0.0052465"
+        rpy="0 0 0" />
+      <mass
+        value="0.94384" />
+      <inertia
+        ixx="0.0055172"
+        ixy="2.4725E-06"
+        ixz="-3.088E-06"
+        iyy="0.008072"
+        iyz="4.4757E-05"
+        izz="0.0055356" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://U-shaped gimbal/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://U-shaped gimbal/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_low">
+    <inertial>
+      <origin
+        xyz="3.7576E-07 0.10889 4.3526E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.7017" />
+      <inertia
+        ixx="0.01372"
+        ixy="-2.5357E-06"
+        ixz="4.585E-06"
+        iyy="0.010361"
+        iyz="2.6097E-06"
+        izz="0.016475" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://U-shaped gimbal/meshes/link_low.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://U-shaped gimbal/meshes/link_low.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_low"
+    type="continuous">
+    <origin
+      xyz="0 0.121 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_low" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_up">
+    <inertial>
+      <origin
+        xyz="-7.4103E-05 0.0014057 0.0058493"
+        rpy="0 0 0" />
+      <mass
+        value="2.2137" />
+      <inertia
+        ixx="0.021433"
+        ixy="3.6375E-06"
+        ixz="1.5475E-05"
+        iyy="0.017841"
+        iyz="-0.00011134"
+        izz="0.023689" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://U-shaped gimbal/meshes/link_up.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://U-shaped gimbal/meshes/link_up.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_up"
+    type="continuous">
+    <origin
+      xyz="0 0.216 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_low" />
+    <child
+      link="link_up" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>
