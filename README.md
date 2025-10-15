@@ -17,6 +17,23 @@
 
 ![alt text](img/show_urdf.png)
 
+## ROS 运行
+
+- 在rviz中可视化
+```shell
+roslaunch u_shaped_gimbal display.launch
+```
+![alt text](img/show_rviz.png)
+
+- 在gazebo中仿真
+
+```shell
+roslaunch u_shaped_gimbal gazebo.launch
+```
+
+![alt text](img/show_gazebo.png)
+
+目前由于没有进行坐标系的转换，所以模型是倒地的。
 ## 最后
 如果需要原始模型，可以通过网盘下载
 
