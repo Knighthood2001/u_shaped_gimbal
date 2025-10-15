@@ -5,7 +5,6 @@
 <robot name="u_shaped_gimbal">
   <!-- 虚拟根节点 -->
   <link name="root_link"/>
-
   <!-- root_link 到 base_link 的固定关节 -->
   <joint name="root_to_base" type="fixed">
     <parent link="root_link"/>
