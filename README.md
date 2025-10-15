@@ -15,4 +15,4 @@
 [**https://gkjohnson.github.io/urdf-loaders/javascript/example/bundle/**](https://gkjohnson.github.io/urdf-loaders/javascript/example/bundle/)  
 中拖入这一整个文件夹进行查看，并可以拉动左下角的拉杆进行观察。
 
-<img src="img/show_urdf.png" width="50%" />
+![alt text](img/show_urdf.png)
