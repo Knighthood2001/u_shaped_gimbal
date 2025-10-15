@@ -12,7 +12,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://u_shaped_gimbal/meshes/base_link.STL" />
+        <mesh filename="package://u_shaped_gimbal_description/meshes/base_link.STL" />
       </geometry>
       <material name="">
         <color rgba="1 1 1 1" />
@@ -21,7 +21,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://u_shaped_gimbal/meshes/base_link.STL" />
+        <mesh filename="package://u_shaped_gimbal_description/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -34,7 +34,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://u_shaped_gimbal/meshes/link_low.STL" />
+        <mesh filename="package://u_shaped_gimbal_description/meshes/link_low.STL" />
       </geometry>
       <material name="">
         <color rgba="1 1 1 1" />
@@ -43,7 +43,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://u_shaped_gimbal/meshes/link_low.STL" />
+        <mesh filename="package://u_shaped_gimbal_description/meshes/link_low.STL" />
       </geometry>
     </collision>
   </link>
@@ -62,7 +62,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://u_shaped_gimbal/meshes/link_up.STL" />
+        <mesh filename="package://u_shaped_gimbal_description/meshes/link_up.STL" />
       </geometry>
       <material name="">
         <color rgba="1 1 1 1" />
@@ -71,7 +71,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://u_shaped_gimbal/meshes/link_up.STL" />
+        <mesh filename="package://u_shaped_gimbal_description/meshes/link_up.STL" />
       </geometry>
     </collision>
   </link>
@@ -90,7 +90,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://u_shaped_gimbal/meshes/link_middle.STL" />
+        <mesh filename="package://u_shaped_gimbal_description/meshes/link_middle.STL" />
       </geometry>
       <material name="">
         <color rgba="1 1 1 1" />
@@ -99,7 +99,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://u_shaped_gimbal/meshes/link_middle.STL" />
+        <mesh filename="package://u_shaped_gimbal_description/meshes/link_middle.STL" />
       </geometry>
     </collision>
   </link>
@@ -118,7 +118,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://u_shaped_gimbal/meshes/link_front.STL" />
+        <mesh filename="package://u_shaped_gimbal_description/meshes/link_front.STL" />
       </geometry>
       <material name="">
         <color rgba="1 1 1 1" />
@@ -127,7 +127,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://u_shaped_gimbal/meshes/link_front.STL" />
+        <mesh filename="package://u_shaped_gimbal_description/meshes/link_front.STL" />
       </geometry>
     </collision>
   </link>
