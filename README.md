@@ -1,4 +1,4 @@
-# u_shaped_gimbal
+# U型云台模型的水平转动和俯仰转动仿真
 ## 说明
 <p align="center">
   <img src="img/origin1.png" width="50%">
@@ -21,14 +21,14 @@
 
 - 在rviz中可视化
 ```shell
-roslaunch u_shaped_gimbal display.launch
+roslaunch u_shaped_gimbal_description display.launch
 ```
 ![alt text](img/show_rviz.png)
 
 - 在gazebo中仿真
 
 ```shell
-roslaunch u_shaped_gimbal gazebo.launch
+roslaunch u_shaped_gimbal_description gazebo.launch
 ```
 
 ![alt text](img/show_gazebo.png)
@@ -54,6 +54,23 @@ roslaunch u_shaped_gimbal gazebo.launch
 这是关节的父子关系。
 
 ![Alt text](img/tf.png)
+
+## 仿真控制云台进行水平和俯仰运动
+
+光有模型而没有控制，那这个云台就只是一个摆设，他也就动不起来。
+
+控制云台动，需要在gazebo中实现，当gazebo中进行水平和俯仰运动后，在rviz中也能够看到云台的运动后的结果。
+
+控制云台进行水平和俯仰运动的配置以及代码，我都放在了`u_shaped_gimbal_control`中，从而符合模块之间的分离。
+
+通过运行以下命令，可以实现云台的水平旋转10度，俯仰旋转20度的效果。
+```shell
+python u_shaped_gimbal_control/scripts/gimbal_controller.py 10 20
+```
+**在这里面，按照rpy正负的定义，朝左和朝下是正，朝右和朝上是负。**
+
+![Alt text](img/control.png)
+
 ## 最后
 如果需要原始模型，可以通过网盘下载
 
