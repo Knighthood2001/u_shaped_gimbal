@@ -34,6 +34,22 @@ roslaunch u_shaped_gimbal gazebo.launch
 ![alt text](img/show_gazebo.png)
 
 目前由于没有进行坐标系的转换，所以模型是倒地的。
+
+通过设置
+```xml
+  <!-- 虚拟根节点 -->
+  <link name="root_link"/>
+  <!-- root_link 到 base_link 的固定关节 -->
+  <joint name="root_to_base" type="fixed">
+    <parent link="root_link"/>
+    <child link="base_link"/>
+    <!-- 绕 X 轴 +90°，再绕 Z 轴 +90°，帮助云台立起来 -->
+    <origin xyz="0 0 0" rpy="1.5708 0 1.5708"/>
+  </joint>
+```
+可以使得云台立起来。
+
+![alt text](img/gazebo_stand.png)
 ## 最后
 如果需要原始模型，可以通过网盘下载
 

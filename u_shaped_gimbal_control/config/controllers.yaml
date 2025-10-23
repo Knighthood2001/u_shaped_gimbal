@@ -1,0 +1,11 @@
+# config/controllers.yaml
+gimbal_controller:
+  type: "position_controllers/JointGroupPositionController"
+  joints:
+    - joint_low
+    - joint_up
+  publish_rate: 50
+
+joint_state_controller:
+  type: "joint_state_controller/JointStateController"
+  publish_rate: 50
