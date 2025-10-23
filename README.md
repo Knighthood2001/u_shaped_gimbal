@@ -50,6 +50,10 @@ roslaunch u_shaped_gimbal gazebo.launch
 可以使得云台立起来。
 
 ![alt text](img/gazebo_stand.png)
+
+这是关节的父子关系。
+
+![Alt text](img/tf.png)
 ## 最后
 如果需要原始模型，可以通过网盘下载
 
