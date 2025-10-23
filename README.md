@@ -63,10 +63,21 @@ roslaunch u_shaped_gimbal_description gazebo.launch
 
 控制云台进行水平和俯仰运动的配置以及代码，我都放在了`u_shaped_gimbal_control`中，从而符合模块之间的分离。
 
+启动仿真
+```shell
+roslaunch u_shaped_gimbal_control gazebo.launch
+```
+
 通过运行以下命令，可以实现云台的水平旋转10度，俯仰旋转20度的效果。
 ```shell
 python u_shaped_gimbal_control/scripts/gimbal_controller.py 10 20
 ```
+
+通过运行以下命令，可以实现云台的水平旋转10度，俯仰旋转20度的平滑效果，后两个参数是Z轴和Y轴转动的总时间（秒），默认2.0秒。
+```shell
+python u_shaped_gimbal_control/scripts/gimbal_joint_smooth_control.py 10 20 3 3
+```
+
 **在这里面，按照rpy正负的定义，朝左和朝下是正，朝右和朝上是负。**
 
 ![Alt text](img/control.png)
