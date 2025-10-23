@@ -3,6 +3,16 @@
     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot name="u_shaped_gimbal">
+  <!-- 虚拟根节点 -->
+  <link name="root_link"/>
+
+  <!-- root_link 到 base_link 的固定关节 -->
+  <joint name="root_to_base" type="fixed">
+    <parent link="root_link"/>
+    <child link="base_link"/>
+    <!-- 绕 X 轴 +90°，再绕 Z 轴 +90° -->
+    <origin xyz="0 0 0" rpy="1.5708 0 1.5708"/>
+  </joint>
   <link name="base_link">
     <inertial>
       <origin xyz="-5.1149E-05 0.060823 -0.0052465" rpy="0 0 0" />
