@@ -1,0 +1,16 @@
+# 控制Z旋转的位置控制器
+root_to_low_position_controller:
+  type: position_controllers/JointPositionController  # 替换为位置控制器
+  joint: joint_low  
+  pid: {p: 100.0, i: 0.01, d: 10.0}  # PID参数仍需保留（用于平滑控制）
+
+# 控制Y旋转的位置控制器
+low_to_high_position_controller:
+  type: position_controllers/JointPositionController  # 替换为位置控制器
+  joint: joint_up  
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+
+# 关节状态控制器（发布所有关节状态）
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50.0

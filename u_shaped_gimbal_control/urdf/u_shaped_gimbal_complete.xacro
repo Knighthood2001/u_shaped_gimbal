@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- 声明XACRO命名空间，必须放在首行（否则无法解析xacro语法） -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="u_shaped_gimbal">
+
+  <!-- 1. 导入URDF结构文件：u_shaped_gimbal_description.urdf -->
+  <xacro:include filename="$(find u_shaped_gimbal_description)/urdf/u_shaped_gimbal_description.urdf" />
+
+  <!-- 2. 导入Gazebo仿真配置文件：gazebo_config.gazebo.xacro -->
+  <!-- 同样使用ROS功能包路径，确保与URDF文件的功能包一致 -->
+  <xacro:include filename="$(find u_shaped_gimbal_control)/urdf/gazebo_config.gazebo.xacro" />
+
+  <!-- （可选）后续扩展：如需添加额外内容（如传感器、新关节），可直接写在这里 -->
+  <!-- 示例：添加一个固定在云台的相机（若需要） -->
+  <!-- <link name="camera_link"> ... </link> -->
+  <!-- <joint name="gimbal_to_camera_joint" type="fixed"> ... </joint> -->
+
+</robot>

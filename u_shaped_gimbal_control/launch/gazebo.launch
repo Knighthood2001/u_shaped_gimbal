@@ -1,0 +1,47 @@
+<launch>
+
+    <!-- 设置launch文件的参数 -->
+    <arg name="world_name" value="$(find u_shaped_gimbal_control)/worlds/empty.world"/>
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+    <arg name="rviz_config" value="$(find u_shaped_gimbal_control)/rviz/rviz.rviz" />
+
+    <!-- 运行gazebo仿真环境 -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world_name)" />
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+        <arg name="headless" value="$(arg headless)"/>
+    </include>
+
+    <!-- 将 Urdf 文件的内容加载到参数服务器 -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find u_shaped_gimbal_control)/urdf/u_shaped_gimbal_complete.xacro'" /> 
+
+    <!-- 运行robot_state_publisher节点，发布tf（依赖关节状态） -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  output="screen" >
+        <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+
+    <!-- 在 gazebo 中显示机器人模型 -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+          args="-urdf -model mbot -param robot_description"/> 
+
+    <!-- 关键修改1：加载控制器配置参数（yaml文件） -->
+    <rosparam file="$(find u_shaped_gimbal_control)/config/gimbal_controller.yaml" command="load" />
+
+    <!-- 关键修改2：启动控制器管理器，加载关节控制器和关节状态控制器 -->
+    <!-- 作用：将控制器与Gazebo中的关节绑定，接收控制命令并驱动关节运动 -->
+    <!-- 修改控制器启动参数，对应两个新控制器 -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen"
+      args="root_to_low_position_controller low_to_high_position_controller joint_state_controller" />
+
+    <!-- 注意：注释掉原有的 joint_state_publisher，因为 Gazebo 中关节状态由 joint_state_controller 发布 -->
+    <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> -->
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" />
+</launch>

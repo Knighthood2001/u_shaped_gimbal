@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="my_world">
+    <!-- 添加地面 -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>  
+
+    <!-- 加载STL文件作为模型 -->
+    <model name="my_stl_model">
+      <pose>2.5 0 0.5 0 1.5708 0</pose>  <!-- x y z roll pitch yaw -->
+      <static>true</static>     <!-- 设置为静态物体 -->
+      
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>file:///home/wu/catkin_ws/src/gimbal_structure_simulation/meshes/signboard_binary.stl</uri>
+              <scale>0.001 0.001 0.001</scale>  <!-- 缩放比例 -->
+            </mesh>
+          </geometry>
+        </visual>
+        
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>file:///home/wu/catkin_ws/src/gimbal_structure_simulation/meshes/signboard_binary.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+  </world>
+</sdf>
