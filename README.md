@@ -82,6 +82,15 @@ python u_shaped_gimbal_control/scripts/gimbal_joint_smooth_control.py 10 20 3 3
 
 ![Alt text](img/control.png)
 
+## C++代码的编译
+在`catkin_ws`目录下，运行以下命令进行编译
+```shell
+catkin_make -DCATKIN_WHITELIST_PACKAGES="u_shaped_gimbal_control"
+```
+然后运行以下命令，可以实现云台的水平旋转10度，俯仰旋转20度的平滑效果。
+```shell
+rosrun u_shaped_gimbal_control gimbal_current_smooth_speed 10 20 3 3
+```
 ## 最后
 如果需要原始模型，可以通过网盘下载
 
