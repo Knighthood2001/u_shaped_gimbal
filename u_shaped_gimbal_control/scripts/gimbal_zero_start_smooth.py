@@ -3,6 +3,11 @@ import math
 import argparse
 from std_msgs.msg import Float64
 
+"""
+这个代码是控制云台从起始角度逐渐过渡到目标角度，并控制云台结构，绕Z轴（水平）和Y轴（垂直）旋转，支持命令行输入目标角度。
+注意起始角度是0，因此每次运行，他最开始都会先闪现到0度，然后再慢慢转动到目标角度。
+"""
+
 def angle_to_radian(angle_deg):
     """将角度（度）转换为弧度"""
     return math.radians(angle_deg)
